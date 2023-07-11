@@ -1,70 +1,34 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+`React Collections management application`
 
-In the project directory, you can run:
+The React Collection Manager App is a single-page web application that allows users to manage collection items. It leverages AWS services such as API Gateway, SQS, Lambda, and My-SQL RDS to handle CRUD (Create, Read, Update, Delete) operations and enable asynchronous processing.
 
-### `npm start`
+`Functionality`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The React Collection Manager App provides the following features:
 
-### `npm test`
+- Collection management: Users can create, view, update, and delete their collection items.
+- Asynchronous processing: After a successful collection item creation or update, additional processing is performed asynchronously using SQS and Lambda functions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`Architecture`
 
-### `npm run build`
+ The application follows a client-server architecture with the following components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `Frontend`: The React app built using modern web technologies like React and materialUI . It handles user interactions, displays data, and makes API requests to the backend.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `Backend`: The backend is composed of AWS services:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- API Gateway: Serves as the RESTful API endpoint for the frontend, allowing communication between the frontend and backend Lambda functions.
+- Lambda Functions: AWS Lambda functions handle the CRUD operations and interact with the MySQL-RDS database.
+- SQS: Simple Queue Service is used for asynchronous processing. After successful collection item creation or update, Lambda functions publish messages to an SQS queue.
+- RDS: Relational Database Service is used to store and manage collection item data.
 
-### `npm run eject`
+Here's an overview of the flow:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The frontend sends HTTP requests to API Gateway endpoints.
+API Gateway routes the requests to the corresponding Lambda functions.
+Lambda functions perform the requested CRUD operations on the RDS database.
+After a successful collection item creation or update, Lambda functions publish messages to an SQS queue.
+Separate Lambda functions process the messages in the SQS queue asynchronously.
