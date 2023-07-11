@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
 
 `React Collections management application`
 
@@ -32,3 +32,6 @@ API Gateway routes the requests to the corresponding Lambda functions.
 Lambda functions perform the requested CRUD operations on the RDS database.
 After a successful collection item creation or update, Lambda functions publish messages to an SQS queue.
 Separate Lambda functions process the messages in the SQS queue asynchronously.
+
+
+https://github.com/Rkvishnu/cloud-collections/blob/main/aws-interactions.png
