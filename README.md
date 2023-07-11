@@ -34,4 +34,5 @@ After a successful collection item creation or update, Lambda functions publish 
 Separate Lambda functions process the messages in the SQS queue asynchronously.
 
 
-https://github.com/Rkvishnu/cloud-collections/blob/main/aws-interactions.png
+![AWS Interactions](https://github.com/Rkvishnu/cloud-collections/raw/main/aws-interactions.png)
+
