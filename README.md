@@ -20,7 +20,8 @@ The React Collection Manager App provides the following features:
 
  The application follows a client-server architecture with the following components:
 
-- ## Frontend: The React app built using modern web technologies like React and materialUI . It handles user interactions, displays data, and makes API requests to the backend.
+- ## Frontend:
+-  The React app built using modern web technologies like React and materialUI . It handles user interactions, displays data, and makes API requests to the backend.
 
 - ## Backend: The backend is composed of AWS services:
 
