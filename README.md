@@ -1,16 +1,20 @@
- 
-
 `React Collections management application`
 
 The React Collection Manager App is a single-page web application that allows users to manage collection items. It leverages AWS services such as API Gateway, SQS, Lambda, and My-SQL RDS to handle CRUD (Create, Read, Update, Delete) operations and enable asynchronous processing.
 
-`Functionality`
-
+## Functionality
 
 The React Collection Manager App provides the following features:
 
 - Collection management: Users can create, view, update, and delete their collection items.
 - Asynchronous processing: After a successful collection item creation or update, additional processing is performed asynchronously using SQS and Lambda functions.
+
+## Technology
+
+React + materialUI – for the basic user interface
+NodeJS + Express – for the REST APIs
+MySQL and Sequelize – for the database layer
+
 
 `Architecture`
 
