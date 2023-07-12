@@ -11,18 +11,18 @@ The React Collection Manager App provides the following features:
 
 ## Technology
 
-React + materialUI – for the basic user interface
-NodeJS + Express – for the REST APIs
-MySQL and Sequelize – for the database layer
+- React + materialUI – for the basic user interface
+- NodeJS + Express – for the REST APIs
+- MySQL and Sequelize – for the database layer
 
 
-`Architecture`
+## Architecture
 
  The application follows a client-server architecture with the following components:
 
-- `Frontend`: The React app built using modern web technologies like React and materialUI . It handles user interactions, displays data, and makes API requests to the backend.
+- ## Frontend: The React app built using modern web technologies like React and materialUI . It handles user interactions, displays data, and makes API requests to the backend.
 
-- `Backend`: The backend is composed of AWS services:
+- ## Backend: The backend is composed of AWS services:
 
 - API Gateway: Serves as the RESTful API endpoint for the frontend, allowing communication between the frontend and backend Lambda functions.
 - Lambda Functions: AWS Lambda functions handle the CRUD operations and interact with the MySQL-RDS database.
